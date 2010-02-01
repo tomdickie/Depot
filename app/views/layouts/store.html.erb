@@ -14,13 +14,18 @@
   </div>
   <div id="columns">
     <div id="side">
+      <%= @current_time %><br />
+      <%= @current_time %><br /><br />
       <a href="http://www....">Home</a><br />
       <a href="http://www..../faq">Questions</a><br />
       <a href="http://www..../news">News</a><br />
       <a href="http://www..../contact">Contact</a><br />
-      <%= Time.now %>
     </div>
     <div id="main">
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+
       <%= yield :layout %><!-- <label id="code.depot.e.include"/> -->
     </div>
   </div>
